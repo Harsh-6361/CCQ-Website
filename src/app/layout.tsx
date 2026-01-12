@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import FeedbackButton from '@/components/FeedbackButton';
 
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body className="bg-gray-900 text-white font-poppins">
         {children}
         <FeedbackButton />
+        <Analytics />
       </body>
     </html>
   );
