@@ -8,7 +8,7 @@ const teamMembers = [
         role: "Founder & CEO",
         fullRole: "Chief Executive Officer",
         image: "/TeamImages/Zaid4x5.jpg",
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/mohammed-zaid-hassan-8468a3389/"
     },
     {
         name: "Jordan",
@@ -22,7 +22,7 @@ const teamMembers = [
         role: "Co-founder, CTO & BDE",
         fullRole: "Chief Technical Officer & Business Development Engineer",
         image: "/TeamImages/Shreyas4x5.jpg",
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/shreyas-dhalve-6a8b6727a/"
     },
     {
         name: "Anlin",
@@ -32,25 +32,25 @@ const teamMembers = [
         linkedin: "#"
     },
     /* {
-        name: "Sallu",
+        name: "Mohammed Sulthan Salahuddin Ayyubee",
         role: "Co-founder, CFO & CSO",
         fullRole: "Chief Finance Officer & Chief Security Officer",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", // Placeholder
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/mohammed-sulthan-salahuddin-ayyubee/"
     }, */
     {
         name: "Harsha",
         role: "Co-founder, COO & MD",
         fullRole: "Chief Operational Officer & Managing Director",
         image: "/TeamImages/harsh4x5.jpg",
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/j-harsh-vardhan-934a00258/"
     },
     {
         name: "Vishal",
         role: "Tech Support",
         fullRole: "Technical Support Engineer",
         image: "/TeamImages/Vishal.jpg",
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/vishal-gowda-9b2817322/"
     }
 ];
 
