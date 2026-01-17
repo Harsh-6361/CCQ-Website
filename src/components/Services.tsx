@@ -90,12 +90,19 @@ export default function Services() {
                         <div className="mt-8 p-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-white text-center shadow-lg transform hover:scale-[1.02] transition-all">
                             <h4 className="font-bold text-xl mb-2">Need a Custom Solution?</h4>
                             <p className="text-blue-100 text-sm mb-4">We build software that scales with your ambition.</p>
-                            <button
-                                onClick={() => setIsModalOpen(true)}
-                                className="px-6 py-2 bg-white text-blue-600 rounded-full font-bold text-sm hover:bg-gray-50 transition-colors shadow-sm"
-                            >
-                                Get in Touch
-                            </button>
+                            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                                <Link href="/portfolio">
+                                    <button className="w-full sm:w-auto px-6 py-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full font-bold text-sm hover:bg-white/20 transition-colors">
+                                        View Portfolio
+                                    </button>
+                                </Link>
+                                <button
+                                    onClick={() => setIsModalOpen(true)}
+                                    className="w-full sm:w-auto px-6 py-2 bg-white text-blue-600 rounded-full font-bold text-sm hover:bg-gray-50 transition-colors shadow-sm"
+                                >
+                                    Get in Touch
+                                </button>
+                            </div>
                         </div>
                     </div>
 

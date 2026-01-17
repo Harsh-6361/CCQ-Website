@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import WebDevTeaser from '@/components/WebDevTeaser';
 import About from '@/components/About';
 import Mission from '@/components/Mission';
 import Services from '@/components/Services';
@@ -19,6 +20,7 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-gray-950 font-sans selection:bg-blue-100 selection:text-blue-900">
       <Navbar />
       <Hero />
+      <WebDevTeaser />
       <About />
       <Mission />
       <Services />

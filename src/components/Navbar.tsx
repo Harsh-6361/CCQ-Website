@@ -30,6 +30,7 @@ export default function Navbar() {
   // Base links
   const allLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Web Development', href: '/portfolio' },
     { name: 'Our Mission', href: '/mission' },
     { name: 'Partners', href: '/partners' },
     { name: 'Our Team', href: '/team' },
@@ -41,7 +42,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-4 left-0 right-0 z-50 max-w-7xl mx-auto w-[95%] md:w-[90%] rounded-2xl transition-all duration-300 border border-transparent ${scrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-2xl border-white/20 dark:border-gray-700 py-3' : 'bg-transparent py-5'}`}>
+      <nav className={`fixed top-4 left-0 right-0 z-50 max-w-7xl mx-auto w-[95%] md:w-[90%] rounded-2xl transition-all duration-300 border border-transparent ${scrolled ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-2xl border-white/20 dark:border-gray-700 py-3' : 'bg-transparent py-3'}`}>
         <div className="px-6 md:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}

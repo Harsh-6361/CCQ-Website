@@ -52,7 +52,7 @@ export default function EventBoard() {
                                     Workshop
                                 </span>
                                 <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 font-medium">
-                                    <FaCalendarAlt /> Jan 16, 2026
+                                    <FaCalendarAlt /> Jan, 2026
                                 </span>
                             </div>
                             <h4 className="font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors">Workshop in the Hive</h4>

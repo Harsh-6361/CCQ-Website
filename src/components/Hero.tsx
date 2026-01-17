@@ -25,33 +25,49 @@ export default function Hero() {
           {/* Left Column: Main Content */}
           <div className="space-y-8 animate-fade-in-up text-center lg:text-left">
             <h2 className="text-blue-600 dark:text-blue-400 font-bold tracking-wider uppercase text-sm md:text-base mb-4 bg-white/50 dark:bg-gray-900/50 px-4 py-2 rounded-full inline-block backdrop-blur-sm border border-blue-100 dark:border-blue-900">
-              Empowering young minds
+              Tech Education & Premium Web Solutions
             </h2>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-gray-900 dark:text-white leading-tight">
               C/CODEQUEST<br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative">
+              <span className="text-xl md:text-2xl lg:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative whitespace-nowrap">
                 CREATE COGNIZE CONQUER
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-blue-400 opacity-50 hidden lg:block" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 9.99995 89.2842 9.09915 133.003 3.99998C154.675 1.47228 174.455 -0.730337 197.994 0.999983" stroke="currentColor" strokeWidth="3"></path></svg>
               </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed backdrop-blur-sm p-4 rounded-xl">
-              Join the brightest minds to tackle real-world challenges and build the future, one line of code at a time.
-            </p>
+            {/* Dual Focus Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
 
-            <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 pt-4">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="px-8 py-4 rounded-full bg-blue-600 text-white text-lg font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:scale-105 transition-all flex items-center gap-2 relative overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center gap-2">Enquire Now <FaArrowRight /></span>
-                <div className="absolute inset-0 h-full w-full bg-indigo-600 scale-0 group-hover:scale-150 transition-transform duration-500 rounded-full origin-center"></div>
-              </button>
+              {/* Education Column */}
+              <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-blue-100 dark:border-blue-900/50 shadow-sm hover:shadow-md transition-all">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
 
-              <Link href="#about">
-                <button className="px-8 py-4 rounded-full bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 text-lg font-medium hover:bg-white dark:hover:bg-gray-700 transition-all backdrop-blur-sm">
-                  Learn More
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  Join the brightest minds to tackle real-world challenges and build the future.
+                </p>
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full px-6 py-3 rounded-xl bg-blue-600 text-white text-sm font-bold shadow-lg shadow-blue-500/20 hover:bg-blue-700 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 group"
+                >
+                  Enquire Now <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </button>
-              </Link>
+              </div>
+
+              {/* Web Services Column */}
+              <div className="bg-white/60 dark:bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-purple-100 dark:border-purple-900/50 shadow-sm hover:shadow-md transition-all">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 leading-relaxed">
+                  Expert web development services. We build scalable, premium digital solutions.
+                </p>
+                <Link href="/portfolio">
+                  <button className="w-full px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold shadow-lg shadow-purple-500/20 hover:from-purple-700 hover:to-indigo-700 hover:scale-[1.02] transition-all flex items-center justify-center gap-2 group">
+                    View Portfolio <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+              </div>
+
             </div>
           </div>
 

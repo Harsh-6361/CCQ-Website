@@ -23,6 +23,15 @@ const config: Config = {
           "900": "#1e3a8a",
           "950": "#172554"
         }
+      },
+      animation: {
+        marquee: 'marquee var(--duration, 30s) linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-33.3%)' },
+        }
       }
     },
   },
