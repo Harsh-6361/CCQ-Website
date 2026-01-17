@@ -81,7 +81,7 @@ export default function Portfolio() {
                     <h3 className="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Technologies We Master</h3>
                     <h2 className="text-3xl md:text-4xl font-bold text-white">Powering Your Success</h2>
                 </div>
-                <ScrollingLogos speed="normal" direction="left" />
+                <ScrollingLogos />
             </section>
 
             {/* Projects Section */}
