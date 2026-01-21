@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 const teamMembers = [
     {
@@ -9,6 +9,13 @@ const teamMembers = [
         fullRole: "Chief Executive Officer",
         image: "/TeamImages/Zaid4x5.jpg",
         linkedin: "https://www.linkedin.com/in/mohammed-zaid-hassan-8468a3389/"
+    },
+    {
+        name: "Divyavani",
+        role: "Senior Advisor",
+        fullRole: "Senior Advisor",
+        image: "/TeamImages/divyavani.jpeg",
+        linkedin: "#"
     },
     {
         name: "Jordan",
@@ -71,25 +78,70 @@ export default function TeamPage() {
                     <p className="text-xl text-gray-600 dark:text-gray-400">The passionate minds behind CodeQuest.</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {teamMembers.map((member, idx) => (
-                        <div key={idx} className="group bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-800">
-                            <div className="relative h-80 overflow-hidden">
-                                <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
-                                    <div className="flex gap-4">
-                                        <a href={member.linkedin} className="text-white hover:text-blue-400 transform hover:scale-110 transition-all"><FaLinkedin size={24} /></a>
-                                        <a href="#" className="text-white hover:text-blue-500 transform hover:scale-110 transition-all"><FaTwitter size={24} /></a>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {teamMembers.map((member, idx) => {
+                        const isCEO = idx === 0;
+                        return (
+                            <div
+                                key={idx}
+                                className={`group bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-800 ${isCEO ? 'col-span-1 sm:col-span-2 lg:col-span-2 flex flex-col sm:flex-row' : 'col-span-1'}`}
+                            >
+                                {/* Image Container */}
+                                <div className={`relative overflow-hidden ${isCEO ? 'w-full sm:w-1/2 h-80 sm:h-auto' : 'w-full aspect-[4/5]'}`}>
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover grayscale duration-500 group-hover:grayscale-0"
+                                    />
+                                    {/* Social Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
+                                        <a href={member.linkedin} className="text-white hover:text-blue-400 transform hover:scale-110 transition-all">
+                                            <FaLinkedin size={24} />
+                                        </a>
                                     </div>
                                 </div>
+
+                                {/* Content Container */}
+                                <div className={`p-6 flex flex-col justify-center ${isCEO ? 'w-full sm:w-1/2 text-left' : 'text-center'}`}>
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider mb-2">
+                                            {member.role}
+                                        </p>
+                                        <p className="text-gray-500 dark:text-gray-400 text-xs italic mb-4">
+                                            {member.fullRole}
+                                        </p>
+                                    </div>
+
+                                    {isCEO && (
+                                        <div className="mt-2 pt-4 border-t border-gray-200 dark:border-gray-700">
+                                            <p className="text-gray-600 dark:text-gray-300 text-sm italic leading-relaxed">
+                                                "Empowering the next generation of innovators through code, creativity, and collaboration. We believe in a future where every student has the tools to build their dreams."
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
-                            <div className="p-6 text-center">
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors">{member.name}</h3>
-                                <p className="text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider mb-2">{member.role}</p>
-                                <p className="text-gray-500 dark:text-gray-400 text-xs italic">{member.fullRole}</p>
-                            </div>
+                        );
+                    })}
+
+                    {/* Join Us Card 
+                    <div className="col-span-1 bg-gradient-to-br from-blue-600 to-purple-700 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-center items-center text-center p-6 text-white aspect-[4/5]">
+                        <div className="mb-4 bg-white/20 p-4 rounded-full backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
                         </div>
-                    ))}
+                        <h3 className="text-2xl font-bold mb-2">Join Our Team</h3>
+                        <p className="text-blue-100 text-sm mb-6">
+                            We are always looking for passionate individuals to join our mission.
+                        </p>
+                        <a href="mailto:careers@codequest.com" className="px-6 py-2 bg-white text-blue-600 font-bold rounded-lg hover:bg-blue-50 transition-colors text-sm uppercase tracking-wider">
+                            Apply Now
+                        </a>
+                    </div>*/}
                 </div>
             </div>
             <Footer />
