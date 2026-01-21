@@ -7,6 +7,7 @@ import Services from '@/components/Services';
 import Partners from '@/components/Partners';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import HackathonPopup from '@/components/HackathonPopup';
 
 import { Metadata } from 'next';
 
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-950 font-sans selection:bg-blue-100 selection:text-blue-900">
+      <HackathonPopup />
       <Navbar />
       <Hero />
       <WebDevTeaser />

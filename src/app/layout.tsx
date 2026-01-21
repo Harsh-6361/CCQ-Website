@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import FeedbackButton from '@/components/FeedbackButton';
+import HackathonRegisterButton from '@/components/HackathonRegisterButton';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="en" className={`${poppins.variable} dark`}>
       <body className="bg-gray-900 text-white font-poppins">
         {children}
-        <FeedbackButton />
+        <HackathonRegisterButton />
       </body>
     </html>
   );
