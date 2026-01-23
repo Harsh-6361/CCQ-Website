@@ -14,10 +14,10 @@ export default function HackathonRegisterButton() {
 
     return (
         <Link
-            href="https://forms.gle/DnzCXSSaMe3ZFHn97"
+            href="https://forms.gle/h6X7cwtMwg8sFQNWA"
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed right-0 top-1/2 -translate-y-1/2 z-[90] hidden md:flex items-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-4 px-4 rounded-l-2xl shadow-lg transition-all duration-300 hover:pr-6 group border-l-2 border-t-2 border-b-2 border-white/20"
+            className="fixed right-0 top-1/2 -translate-y-1/2 z-[90] hidden md:flex items-center gap-2 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white py-4 px-4 rounded-l-2xl shadow-lg transition-all duration-300 hover:pr-6 group border-l-2 border-t-2 border-b-2 border-white/20"
         >
             <span className="writing-mode-vertical text-sm font-bold tracking-widest uppercase transform rotate-180" style={{ writingMode: 'vertical-rl' }}>
                 Register Now
