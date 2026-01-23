@@ -28,11 +28,16 @@ export default function GalleryContent() {
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const imgRef = useRef<HTMLImageElement>(null);
 
+    // Reset zoom state to defaults
+    const resetZoomState = () => {
+        setScale(1);
+        setPosition({ x: 0, y: 0 });
+    };
+
     // Close modal and reset zoom state
     const handleCloseModal = () => {
         setSelectedImage(null);
-        setScale(1);
-        setPosition({ x: 0, y: 0 });
+        resetZoomState();
     };
 
     const handleZoomIn = (e?: React.MouseEvent) => {
@@ -50,8 +55,7 @@ export default function GalleryContent() {
 
     const handleReset = (e?: React.MouseEvent) => {
         e?.stopPropagation();
-        setScale(1);
-        setPosition({ x: 0, y: 0 });
+        resetZoomState();
     };
 
     // Calculate watermark opacity: 1 at scale=1, 0 at scale=3
