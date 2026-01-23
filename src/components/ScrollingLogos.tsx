@@ -3,37 +3,25 @@
 import type React from "react"
 import { cn } from "@/lib/utils"
 // Frontend
-import { FaReact, FaJs, FaHtml5, FaCss3, FaChartBar } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMui, SiPwa, SiD3Dotjs, SiChartdotjs } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMui, SiPwa } from "react-icons/si";
 // Backend
-import { FaNodeJs, FaPython, FaLock, FaKey, FaUserShield } from "react-icons/fa";
-import { SiDjango, SiFastapi, SiNestjs, SiGraphql, SiJsonwebtokens } from "react-icons/si";
+import { FaNodeJs, FaPython, FaLock } from "react-icons/fa";
+import { SiDjango, SiFastapi, SiNestjs, SiGraphql } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 // Database
-import { SiPostgresql, SiMysql, SiMongodb, SiRedis } from "react-icons/si";
-import { FaDatabase } from "react-icons/fa";
+import { SiPostgresql, SiMongodb, SiRedis } from "react-icons/si";
 // AI & Data
-import { SiNumpy, SiPandas, SiScikitlearn, SiPytorch, SiTensorflow, SiHuggingface, SiOpencv, SiApacheairflow, SiApachespark, SiMlflow } from "react-icons/si";
+import { SiNumpy, SiPandas, SiPytorch, SiTensorflow, SiHuggingface, SiOpencv, SiApacheairflow, SiApachespark } from "react-icons/si";
 // Cloud & DevOps
-import { FaDocker, FaAws, FaGoogle, FaGithub, FaMicrosoft } from "react-icons/fa";
-import { SiKubernetes, SiGithubactions, SiTerraform, SiPrometheus, SiGrafana } from "react-icons/si";
+import { FaDocker, FaAws, FaGoogle, FaMicrosoft } from "react-icons/fa";
+import { SiKubernetes, SiGithubactions, SiTerraform } from "react-icons/si";
 // Security
-import { SiLetsencrypt, SiOwasp, SiVault } from "react-icons/si";
-import { FaShieldAlt, FaFileContract } from "react-icons/fa";
+import { SiOwasp } from "react-icons/si";
 // Testing & QA
-import { SiPytest, SiJest, SiPostman, SiApachejmeter, SiK6, SiSonarqube } from "react-icons/si";
-// Docs
-import { SiSwagger } from "react-icons/si";
-import { FaBook, FaProjectDiagram } from "react-icons/fa";
+import { SiPytest, SiJest, SiPostman, SiSonarqube } from "react-icons/si";
 
 import Marquee from "react-fast-marquee";
-
-interface Logo {
-    id: string
-    name: string
-    icon?: React.ComponentType<{ className?: string; size?: number }>
-    text?: string
-}
 
 export default function ScrollingLogos({ className }: { className?: string }) {
 

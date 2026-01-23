@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { FaCheckCircle, FaTimes, FaStar, FaArrowLeft } from 'react-icons/fa';
+import { FaCheckCircle, FaStar, FaArrowLeft } from 'react-icons/fa';
 import { submitHiveFeedback } from '@/app/actions/feedback';
 
 interface FeedbackFormProps {
@@ -87,7 +87,7 @@ export default function FeedbackForm({ initialStats }: FeedbackFormProps) {
                 </span>
                 <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Workshop in the Hive</h1>
                 <p className="text-gray-600 dark:text-gray-400">
-                    We'd love to hear your thoughts! Your feedback helps us create better experiences.
+                    We&apos;d love to hear your thoughts! Your feedback helps us create better experiences.
                 </p>
             </div>
 
@@ -166,7 +166,7 @@ export default function FeedbackForm({ initialStats }: FeedbackFormProps) {
                         <label className="flex items-center gap-3 cursor-pointer">
                             <input type="checkbox" name="presentation_interest" value="Yes" className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500 border-gray-300" />
                             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                                I'm interested in having a presentation for my organization.
+                                I&apos;m interested in having a presentation for my organization.
                             </span>
                         </label>
                     </div>

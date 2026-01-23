@@ -118,7 +118,7 @@ export default function TeamPage() {
                                     {isCEO && (
                                         <div className="mt-2 pt-4 border-t border-gray-200 dark:border-gray-700">
                                             <p className="text-gray-600 dark:text-gray-300 text-sm italic leading-relaxed">
-                                                "Empowering the next generation of innovators through code, creativity, and collaboration. We believe in a future where every student has the tools to build their dreams."
+                                                &quot;Empowering the next generation of innovators through code, creativity, and collaboration. We believe in a future where every student has the tools to build their dreams.&quot;
                                             </p>
                                         </div>
                                     )}

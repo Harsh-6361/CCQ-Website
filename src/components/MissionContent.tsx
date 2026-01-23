@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Watermark from '@/components/Watermark';
@@ -74,7 +75,7 @@ export default function MissionContent() {
                         Empowering the Innovators of Tomorrow
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        At CodeQuest, we don't just teach code; we cultivate a mindset of curiosity, resilience, and creativity that prepares students for a future we can only imagine.
+                        At CodeQuest, we don&apos;t just teach code; we cultivate a mindset of curiosity, resilience, and creativity that prepares students for a future we can only imagine.
                     </p>
                 </div>
             </section>
@@ -97,7 +98,7 @@ export default function MissionContent() {
                         <div>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Story</h2>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                CodeQuest began with a simple observation: technology was moving fast, but education wasn't keeping up. We saw brilliant young minds consuming technology but rarely understanding how to create it.
+                                CodeQuest began with a simple observation: technology was moving fast, but education wasn&apos;t keeping up. We saw brilliant young minds consuming technology but rarely understanding how to create it.
                             </p>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-4">
                                 What started as a small weekend workshop for 10 students has grown into a movement. Today, we partner with leading schools to bring world-class tech education directly into the classroom, bridging the gap between theoretical knowledge and real-world application.
@@ -107,7 +108,7 @@ export default function MissionContent() {
                         <div>
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Philosophy</h2>
                             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                                We believe that <strong>every child is an inventor</strong>. Our role is simply to provide the tools and the canvas. We move beyond rote memorization to "Learning by Doing." Whether it's debugging a line of code or soldering a circuit, we celebrate the process of failure and discovery as much as the final success.
+                                We believe that <strong>every child is an inventor</strong>. Our role is simply to provide the tools and the canvas. We move beyond rote memorization to &quot;Learning by Doing.&quot; Whether it&apos;s debugging a line of code or soldering a circuit, we celebrate the process of failure and discovery as much as the final success.
                             </p>
                         </div>
                     </div>
@@ -177,9 +178,9 @@ export default function MissionContent() {
                         <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
                             Whether you are a parent, a principal, or a student, there is a place for you in the CodeQuest ecosystem.
                         </p>
-                        <a href="/#contact" className="inline-block bg-white text-blue-600 font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-50 hover:scale-105 transition-all">
+                        <Link href="/#contact" className="inline-block bg-white text-blue-600 font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-50 hover:scale-105 transition-all">
                             Get in Touch
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
