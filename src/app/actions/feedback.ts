@@ -34,7 +34,7 @@ export async function submitHiveFeedback(formData: FormData) {
         const fileContent = fs.readFileSync(DATA_FILE, 'utf-8');
         try {
             currentData = JSON.parse(fileContent);
-        } catch (e) {
+        } catch {
             currentData = [];
         }
     }
@@ -75,7 +75,7 @@ export async function getHiveStats() {
             total,
             average: avgRating.toFixed(1)
         };
-    } catch (e) {
+    } catch {
         return { total: 0, average: '0.0' };
     }
 }

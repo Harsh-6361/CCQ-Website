@@ -63,7 +63,7 @@ export default function WebDevEnquiryModal({ isOpen, onClose }: WebDevEnquiryMod
                                     </div>
                                     <h3 className="text-2xl font-bold text-white mb-2">Start Your Project</h3>
                                     <p className="text-gray-400 text-sm leading-relaxed">
-                                        Ready to build something extraordinary? Fill out the form and let's discuss your vision.
+                                        Ready to build something extraordinary? Fill out the form and let&apos;s discuss your vision.
                                     </p>
                                 </div>
 
@@ -158,7 +158,7 @@ export default function WebDevEnquiryModal({ isOpen, onClose }: WebDevEnquiryMod
                             </div>
                             <h3 className="text-3xl font-bold text-white mb-2">Message Received!</h3>
                             <p className="text-gray-400 mb-8 max-w-md">
-                                Thanks for reaching out. We're excited to hear about your project and will get back to you within 24 hours.
+                                Thanks for reaching out. We&apos;re excited to hear about your project and will get back to you within 24 hours.
                             </p>
                             <button
                                 onClick={handleClose}

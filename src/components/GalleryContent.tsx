@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Watermark from '@/components/Watermark';
@@ -28,13 +28,12 @@ export default function GalleryContent() {
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
     const imgRef = useRef<HTMLImageElement>(null);
 
-    // Reset zoom when image is closed or changed
-    useEffect(() => {
-        if (!selectedImage) {
-            setScale(1);
-            setPosition({ x: 0, y: 0 });
-        }
-    }, [selectedImage]);
+    // Close modal and reset zoom state
+    const handleCloseModal = () => {
+        setSelectedImage(null);
+        setScale(1);
+        setPosition({ x: 0, y: 0 });
+    };
 
     const handleZoomIn = (e?: React.MouseEvent) => {
         e?.stopPropagation();
@@ -114,7 +113,7 @@ export default function GalleryContent() {
             {selectedImage && (
                 <div
                     className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
-                    onClick={() => setSelectedImage(null)}
+                    onClick={handleCloseModal}
                 >
                     {/* Controls */}
                     <div className="absolute top-6 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 bg-black/50 backdrop-blur-sm px-6 py-3 rounded-full border border-white/10" onClick={e => e.stopPropagation()}>
@@ -147,7 +146,7 @@ export default function GalleryContent() {
 
                     <button
                         className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-50 p-2 hover:bg-white/10 rounded-full"
-                        onClick={() => setSelectedImage(null)}
+                        onClick={handleCloseModal}
                     >
                         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>

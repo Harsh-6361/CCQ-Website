@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaCheckCircle, FaSpinner } from 'react-icons/fa';
+import { FaSpinner } from 'react-icons/fa';
 
 export default function EnquiryForm({ onSuccess }: { onSuccess?: () => void }) {
     const [isSubmitting, setIsSubmitting] = useState(false);

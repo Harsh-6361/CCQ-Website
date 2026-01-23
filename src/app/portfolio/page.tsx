@@ -1,17 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+
 import PortfolioHero from './components/PortfolioHero';
 import ScrollingLogos from '@/components/ScrollingLogos';
 import WebDevEnquiryModal from './components/WebDevEnquiryModal';
-import { FaSchool, FaLaptopCode, FaExternalLinkAlt, FaGithub, FaServer, FaDatabase, FaMobileAlt, FaArrowRight } from 'react-icons/fa';
+import { FaLaptopCode, FaServer, FaDatabase, FaMobileAlt } from 'react-icons/fa';
 
 export default function Portfolio() {
     const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'app' | 'backend'>('all');
     const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
-    const projects = [
+    // Projects data - to be displayed in grid when ready
+    const _projects = [
         {
             id: 1,
             title: 'EduTrack - School Management',
@@ -66,10 +67,6 @@ export default function Portfolio() {
         )
     }
 
-    const filteredProjects = activeCategory === 'all'
-        ? projects
-        : projects.filter(p => p.category === activeCategory);
-
     return (
         <main className="bg-black min-h-screen">
 
@@ -105,7 +102,7 @@ export default function Portfolio() {
                             {['all', 'web', 'app', 'backend'].map((cat) => (
                                 <button
                                     key={cat}
-                                    onClick={() => setActiveCategory(cat as any)}
+                                    onClick={() => setActiveCategory(cat as 'all' | 'web' | 'app' | 'backend')}
                                     className={`px-4 py-2 rounded-lg text-sm font-bold capitalize transition-all ${activeCategory === cat
                                         ? 'bg-gray-800 text-white shadow-md'
                                         : 'text-gray-500 hover:text-gray-300'
@@ -131,7 +128,7 @@ export default function Portfolio() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-                        LET'S BUILD SOMETHING <br />
+                        LET&apos;S BUILD SOMETHING <br />
                         <span className="text-blue-500">EXTRAORDINARY</span>
                     </h2>
                     <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
