@@ -1,11 +1,28 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import PortfolioHero from './components/PortfolioHero';
+import PortfolioNavbar from './components/PortfolioNavbar';
+import PortfolioFooter from './components/PortfolioFooter';
+import Process from '@/components/Process';
+import ScrollToTop from '@/components/ScrollToTop';
+
 import ScrollingLogos from '@/components/ScrollingLogos';
 import WebDevEnquiryModal from './components/WebDevEnquiryModal';
-import { FaSchool, FaLaptopCode, FaExternalLinkAlt, FaGithub, FaServer, FaDatabase, FaMobileAlt, FaArrowRight } from 'react-icons/fa';
+import {
+    FaSchool,
+    FaLaptopCode,
+    FaMobileAlt,
+    FaServer,
+    FaDatabase,
+    FaArrowRight,
+    FaCheckCircle
+} from 'react-icons/fa';
+
+import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default function Portfolio() {
     const [activeCategory, setActiveCategory] = useState<'all' | 'web' | 'app' | 'backend'>('all');
@@ -14,66 +31,80 @@ export default function Portfolio() {
     const projects = [
         {
             id: 1,
-            title: 'EduTrack - School Management',
+            title: 'PlotIQ - Land Intelligence Platform',
             category: 'web',
-            description: 'A comprehensive ERP solution for schools managing attendance, grades, and fee payments.',
+            description: 'A GIS‑driven land intelligence platform for property verification, disputes insight, and better decision‑making for buyers, banks, and institutions. Currently in active development with private beta users.',
             tags: ['Next.js', 'Django', 'PostgreSQL'],
-            color: 'from-blue-600 to-indigo-700',
-            icon: <FaSchool size={40} className="text-white" />,
+            icon: <FaSchool className="text-blue-500 size-8" />,
+            url: 'https://land-xi-ebon.vercel.app/',
+            status: 'In Progress - Private Beta',
+            statusColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/50'
         },
         {
             id: 2,
-            title: 'ShopWave E-Commerce',
+            title: 'Medhasya Academy',
             category: 'web',
-            description: 'Full-featured online store with real-time inventory, secure checkout, and admin dashboard.',
+            description: 'A fast, SEO‑optimized site for a Academy, highlighting courses, testimonials, and location details, designed to convert local traffic into admissions.',
             tags: ['React', 'Node.js', 'MongoDB'],
-            color: 'from-purple-600 to-pink-700',
-            icon: <FaLaptopCode size={40} className="text-white" />,
+            icon: <FaLaptopCode className="text-purple-500 size-8" />,
+            url: 'https://www.medhasyaacademy.com/',
+            status: 'Completed - Live',
+            statusColor: 'bg-green-500/20 text-green-300 border-green-500/50'
         },
         {
             id: 3,
-            title: 'HealthMate App',
-            category: 'app',
-            description: 'Mobile application for tracking fitness goals, diet plans, and connecting with trainers.',
-            tags: ['React Native', 'Firebase'],
-            color: 'from-green-500 to-teal-600',
-            icon: <FaMobileAlt size={40} className="text-white" />,
-        },
-        {
-            id: 4,
-            title: 'SecureVault API',
-            category: 'backend',
-            description: 'High-security financial transaction processing API with banking-grade encryption.',
-            tags: ['Python', 'FastAPI', 'Docker'],
-            color: 'from-orange-500 to-red-600',
-            icon: <FaServer size={40} className="text-white" />,
-        },
-        {
-            id: 5,
-            title: 'Zonal Calculator',
+            title: 'Nisha Interio',
             category: 'web',
-            description: 'Automated tool for real estate feasibility analysis and zonal regulations.',
-            tags: ['Next.js', 'Typescript', 'Tailwind'],
-            color: 'from-cyan-500 to-blue-600',
-            icon: <FaDatabase size={40} className="text-white" />,
+            description: 'A premium interior design site focused on storytelling, portfolio visuals, and consultation bookings, crafted for a boutique studio targeting high‑value residential and commercial clients.',
+            tags: ['Next.js', 'Tailwind', 'Framer Motion'],
+            icon: <FaMobileAlt className="text-green-500 size-8" />,
+            url: 'https://v0-nisha-interio-website.vercel.app/',
+            status: 'In Progress - Private Beta',
+            statusColor: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/50'
         }
     ];
-
-    /* Icon imports fix - FaSchool wasn't imported */
-    function FaSchool(props: { size?: number, className?: string }) {
-        return (
-            <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 640 512" height={props.size} width={props.size} className={props.className} xmlns="http://www.w3.org/2000/svg"><path d="M0 224v272c0 8.84 7.16 16 16 16h80V192H32c-17.67 0-32 14.33-32 32zm160-32h224v320H160V192zm384 32v272c0 8.84 7.16 16 16 16h80V192h-64c-17.67 0-32 14.33-32 32zm-48-32v320h-96V192h96zM256 224v64h128v-64H256zm0 128v64h128v-64H256zM96 0C42.98 0 0 42.98 0 96v64h640V96c0-53.02-42.98-96-96-96H96z"></path></svg>
-        )
-    }
 
     const filteredProjects = activeCategory === 'all'
         ? projects
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <main className="bg-black min-h-screen">
+        <main className="bg-black min-h-screen font-sans">
+            <PortfolioNavbar />
 
-            <PortfolioHero />
+            <PortfolioHero onContactClick={() => setIsEnquiryOpen(true)} />
+
+            {/* Research & Sustainability Section */}
+            <section className="py-16 px-6 bg-gray-900/30 border-b border-gray-800">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                    {/* Research Background */}
+                    <div>
+                        <h3 className="text-2xl font-bold text-white mb-4">Research-Backed Engineering</h3>
+                        <p className="text-gray-400 mb-4 leading-relaxed">
+                            Our core team includes developers who have published research papers and worked on complex data‑driven systems. They bring that depth into building robust, domain‑specific tools for any industry workflow.
+                        </p>
+                        <ul className="space-y-2 text-gray-400">
+                            <li className="flex items-center gap-2"><FaCheckCircle className="text-blue-500" /> Experience in academic research & data optimization</li>
+                            <li className="flex items-center gap-2"><FaCheckCircle className="text-blue-500" /> Translating complex tech for land, education, & interiors</li>
+                        </ul>
+                    </div>
+
+                    {/* Sustainability & Affordability */}
+                    <div>
+                        <h3 className="text-2xl font-bold text-white mb-4">Built for Sustainable Impact</h3>
+                        <div className="space-y-6">
+                            <div>
+                                <h4 className="text-blue-400 font-bold mb-1">Efficient Architectures</h4>
+                                <p className="text-gray-400 text-sm">We prioritize code that runs lean, uses fewer resources, and stays easier to evolve over years, not months.</p>
+                            </div>
+                            <div>
+                                <h4 className="text-blue-400 font-bold mb-1">Fair & Transparent Pricing</h4>
+                                <p className="text-gray-400 text-sm">Clear scope, timelines, and no hidden costs. We keep pricing accessible for early‑stage founders and small businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Tech Stack Marquee */}
             <section id="tech-stack" className="py-20 bg-gray-900/50 border-y border-gray-800 relative z-20">
@@ -86,63 +117,104 @@ export default function Portfolio() {
 
             {/* Projects Section */}
             <section id="projects" className="py-20 px-6 bg-black">
-                <div className="max-w-7xl mx-auto">
 
-                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-                        <div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Selected Work</h2>
-                            <p className="text-gray-400 max-w-xl mb-4">
-                                A collection of projects that define our expertise in web and mobile development.
-                            </p>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/30 border border-blue-800 text-blue-400 text-xs font-bold uppercase tracking-wider animate-pulse">
-                                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                                Works will be updated soon
-                            </div>
-                        </div>
-
-                        {/* Filter Buttons */}
-                        <div className="flex bg-gray-900 p-1 rounded-xl">
-                            {['all', 'web', 'app', 'backend'].map((cat) => (
-                                <button
-                                    key={cat}
-                                    onClick={() => setActiveCategory(cat as any)}
-                                    className={`px-4 py-2 rounded-lg text-sm font-bold capitalize transition-all ${activeCategory === cat
-                                        ? 'bg-gray-800 text-white shadow-md'
-                                        : 'text-gray-500 hover:text-gray-300'
-                                        }`}
-                                >
-                                    {cat === 'all' ? 'All' : cat}
-                                </button>
-                            ))}
-                        </div>
+                {/* Filter Section - Minimalist */}
+                <div className="sticky top-0 z-30 bg-black/80 backdrop-blur-xl border-b border-white/10 py-4 mb-12">
+                    <div className="max-w-7xl mx-auto px-6 flex justify-center gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+                        {['all', 'web', 'app', 'backend'].map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setActiveCategory(category as any)}
+                                className={`px-5 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap relative
+                                ${activeCategory === category
+                                        ? 'text-black'
+                                        : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                    }`}
+                            >
+                                {activeCategory === category && (
+                                    <motion.div
+                                        layoutId="activeFilter"
+                                        className="absolute inset-0 bg-white rounded-full"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                                <span className="relative z-10 capitalize">{category === 'app' ? 'Mobile Apps' : category === 'web' ? 'Web Platforms' : category}</span>
+                            </button>
+                        ))}
                     </div>
+                </div>
 
-                    {/* Grid */}
+                {/* Projects Grid */}
+                <div className="max-w-7xl mx-auto px-0 pb-24 min-h-[50vh]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <AnimatePresence mode='popLayout'>
+                            {filteredProjects.map((project) => (
+                                <motion.div
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.9 }}
+                                    transition={{ duration: 0.3 }}
+                                    key={project.id}
+                                >
+                                    <Card className="bg-gray-900 border-gray-800 overflow-hidden group hover:border-gray-700 transition-all hover:shadow-2xl hover:shadow-blue-900/20 h-full flex flex-col">
 
-
+                                        <CardHeader>
+                                            <div className="flex justify-between items-start mb-4">
+                                                <div className="p-3 bg-gray-900 rounded-xl border border-gray-800 group-hover:border-blue-500/30 transition-colors">
+                                                    {project.icon}
+                                                </div>
+                                                <Badge className={`${project.statusColor} backdrop-blur-md shadow-lg border`}>
+                                                    {project.status}
+                                                </Badge>
+                                            </div>
+                                            <CardTitle className="text-xl text-white group-hover:text-blue-400 transition-colors">{project.title}</CardTitle>
+                                        </CardHeader>
+                                        <CardContent className="flex-grow">
+                                            <CardDescription className="text-gray-400 leading-relaxed">
+                                                {project.description}
+                                            </CardDescription>
+                                        </CardContent>
+                                        <CardFooter className="pt-0 mt-auto">
+                                            {project.url && (
+                                                <a href={project.url} target="_blank" rel="noopener noreferrer" className="w-full">
+                                                    <Button className="w-full bg-white text-black hover:bg-gray-200 font-bold group">
+                                                        View Live <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                                                    </Button>
+                                                </a>
+                                            )}
+                                        </CardFooter>
+                                    </Card>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+                    </div>
                 </div>
             </section>
 
-            {/* Tech Stack Marquee */}
-
+            <Process />
 
             {/* CTA */}
             <section className="py-32 px-6 bg-black relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
+                    <div className="inline-block px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-800 text-blue-400 font-bold text-sm mb-6">
+                        Limited Time Offer
+                    </div>
                     <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-                        LET'S BUILD SOMETHING <br />
-                        <span className="text-blue-500">EXTRAORDINARY</span>
+                        GET A PROJECT ESTIMATE <br />
+                        <span className="text-blue-500">IN 24 HOURS</span>
                     </h2>
                     <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                        Ready to take your digital presence to the next level? creating your vision start today.
+                        Stop guessing about costs. Book a quick 20-minute discovery call and get a clear roadmap for your idea.
                     </p>
-                    <button
+                    <Button
+                        size="lg"
                         onClick={() => setIsEnquiryOpen(true)}
-                        className="px-10 py-5 bg-white text-black font-bold text-lg rounded-full hover:bg-blue-500 hover:text-white transition-all shadow-xl hover:shadow-blue-500/50"
+                        className="text-lg px-10 py-6 rounded-full bg-white text-black hover:bg-blue-500 hover:text-white transition-all shadow-xl hover:shadow-blue-500/50"
                     >
-                        Start a Project
-                    </button>
+                        Schedule Discovery Call
+                    </Button>
                 </div>
             </section>
 
@@ -151,6 +223,8 @@ export default function Portfolio() {
                 onClose={() => setIsEnquiryOpen(false)}
             />
 
+            <ScrollToTop />
+            <PortfolioFooter />
         </main>
     );
 }

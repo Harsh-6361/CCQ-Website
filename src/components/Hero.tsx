@@ -19,6 +19,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-white/40 dark:bg-gray-950/40"></div>
       </div>
 
+      {/* CodeParticles removed from Main Page */}
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -34,6 +36,9 @@ export default function Hero() {
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-blue-400 opacity-50 hidden lg:block" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 9.99995 89.2842 9.09915 133.003 3.99998C154.675 1.47228 174.455 -0.730337 197.994 0.999983" stroke="currentColor" strokeWidth="3"></path></svg>
               </span>
             </h1>
+
+            {/* WhatsApp removed */}
+
             {/* Dual Focus Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
 

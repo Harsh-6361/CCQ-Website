@@ -1,10 +1,13 @@
 import Navbar from '@/components/Navbar';
+import HomeBottomNav from '@/components/HomeBottomNav';
+import ScrollToTop from '@/components/ScrollToTop';
 import Hero from '@/components/Hero';
 import WebDevTeaser from '@/components/WebDevTeaser';
 import About from '@/components/About';
 import Mission from '@/components/Mission';
 import Services from '@/components/Services';
 import Partners from '@/components/Partners';
+import ExclusiveOffer from '@/components/ExclusiveOffer';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import HackathonPopup from '@/components/HackathonPopup';
@@ -27,8 +30,11 @@ export default function Home() {
       <Mission />
       <Services />
       <Partners />
+      <ExclusiveOffer />
       <Contact />
       <Footer />
+      <HomeBottomNav />
+      <ScrollToTop />
     </main>
   );
 }
