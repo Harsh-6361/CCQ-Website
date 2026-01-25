@@ -1,13 +1,6 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
 import './globals.css';
 import HackathonRegisterButton from '@/components/HackathonRegisterButton';
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-poppins',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://codequest.in'), // Replace with actual domain
@@ -53,8 +46,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} dark`}>
-      <body className="bg-gray-900 text-white font-poppins">
+    <html lang="en" className="dark">
+      <body className="bg-gray-900 text-white font-sans">
         {children}
         <HackathonRegisterButton />
       </body>

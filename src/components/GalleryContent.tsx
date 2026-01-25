@@ -29,6 +29,7 @@ export default function GalleryContent() {
     const imgRef = useRef<HTMLImageElement>(null);
 
     // Reset zoom when image is closed or changed
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => {
         if (!selectedImage) {
             setScale(1);

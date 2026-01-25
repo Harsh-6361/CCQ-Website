@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'system-ui', 'sans-serif'],
+      },
       colors: {
         primary: {
           "50": "#eff6ff",
@@ -35,6 +39,7 @@ const config: Config = {
       }
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require('flowbite/plugin')],
   darkMode: 'class',
 };

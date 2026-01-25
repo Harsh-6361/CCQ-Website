@@ -21,16 +21,16 @@ export default function ExclusiveOffer() {
                         Exclusive Offer
                     </div>
                     <CardTitle className="text-3xl md:text-5xl font-black text-white leading-tight">
-                        You've Scrolled This Far—<br />
+                        You&apos;ve Scrolled This Far—<br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                            Let's Talk
+                            Let&apos;s Talk
                         </span>
                     </CardTitle>
                 </CardHeader>
 
                 <CardContent className="text-center relative z-10 pb-12">
                     <CardDescription className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
-                        We'll diagnose your biggest challenge and map out your next steps—<span className="text-white font-semibold">no obligation.</span>
+                        We&apos;ll diagnose your biggest challenge and map out your next steps—<span className="text-white font-semibold">no obligation.</span>
                     </CardDescription>
 
                     <Button

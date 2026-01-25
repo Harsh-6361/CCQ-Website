@@ -14,8 +14,6 @@ import {
     FaSchool,
     FaLaptopCode,
     FaMobileAlt,
-    FaServer,
-    FaDatabase,
     FaArrowRight,
     FaCheckCircle
 } from 'react-icons/fa';
@@ -124,7 +122,7 @@ export default function Portfolio() {
                         {['all', 'web', 'app', 'backend'].map((category) => (
                             <button
                                 key={category}
-                                onClick={() => setActiveCategory(category as any)}
+                                onClick={() => setActiveCategory(category as 'all' | 'web' | 'app' | 'backend')}
                                 className={`px-5 py-2 rounded-full text-sm font-bold transition-all whitespace-nowrap relative
                                 ${activeCategory === category
                                         ? 'text-black'

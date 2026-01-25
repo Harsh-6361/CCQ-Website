@@ -66,7 +66,7 @@ export default function Contact() {
                     <div className="lg:col-span-2">
                         <div className="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700">
                             <EnquiryForm onSuccess={() => setShowModal(true)} />
-                            <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">We'll get back to you within 24 hours.</p>
+                            <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">We&apos;ll get back to you within 24 hours.</p>
                         </div>
                     </div>
                 </div>

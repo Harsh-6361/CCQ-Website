@@ -61,7 +61,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                             Booking Request Sent!
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-8">
-                            We've received your request. Our team will contact you shortly to confirm the schedule.
+                            We&apos;ve received your request. Our team will contact you shortly to confirm the schedule.
                         </p>
                         <Button onClick={onClose} className="w-full">
                             Close
@@ -74,7 +74,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                                 Book Your Free Call
                             </h3>
                             <p className="text-gray-500 dark:text-gray-400 text-sm">
-                                Fill in the details below and we'll get back to you to confirm your slot.
+                                Fill in the details below and we&apos;ll get back to you to confirm your slot.
                             </p>
                         </div>
 

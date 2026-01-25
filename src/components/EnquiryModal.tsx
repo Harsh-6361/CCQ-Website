@@ -38,7 +38,7 @@ export default function EnquiryModal({ isOpen, onClose }: EnquiryModalProps) {
                 {!showSuccess ? (
                     <>
                         <div className="mb-6">
-                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Let's Build Something Great</h3>
+                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">Let&apos;s Build Something Great</h3>
                             <p className="text-sm text-gray-500 dark:text-gray-400">Tell us about your project or requirement.</p>
                         </div>
                         <EnquiryForm onSuccess={handleSuccess} />
