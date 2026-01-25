@@ -53,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} dark`}>
-      <body className="bg-gray-900 text-white font-poppins">
+    <html lang="en" className={`${poppins.variable} dark`}> 
+      <body className="bg-gray-900 text-white font-poppins overflow-x-hidden">
         {children}
         <HackathonRegisterButton />
       </body>
