@@ -29,10 +29,11 @@ export default function GalleryContent() {
     const imgRef = useRef<HTMLImageElement>(null);
 
     // Reset zoom when image is closed or changed
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     useEffect(() => {
         if (!selectedImage) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setScale(1);
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setPosition({ x: 0, y: 0 });
         }
     }, [selectedImage]);
