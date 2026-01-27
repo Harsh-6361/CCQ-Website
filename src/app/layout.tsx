@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import HackathonRegisterButton from '@/components/HackathonRegisterButton';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
       <body className="bg-gray-900 text-white font-poppins overflow-x-hidden">
         {children}
         <HackathonRegisterButton />
+        <SpeedInsights />
       </body>
     </html>
   );
