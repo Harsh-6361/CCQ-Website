@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaTimes, FaSpinner, FaCheckCircle, FaCalendarAlt, FaClock } from 'react-icons/fa';
 import { Button } from "@/components/ui/button";
+import { submitToWeb3Forms } from '@/app/actions/web3forms';
 
 interface BookingModalProps {
     isOpen: boolean;
@@ -24,15 +25,12 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         formData.set('subject', 'Exclusive Offer - Consultation Booking');
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData
-            });
+            const result = await submitToWeb3Forms(formData);
 
-            if (response.ok) {
+            if (result.success) {
                 setIsSuccess(true);
             } else {
-                alert("Something went wrong. Please try again.");
+                alert(result.message || "Something went wrong. Please try again.");
             }
         } catch (error) {
             console.error("Submission error", error);
@@ -79,7 +77,6 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <input type="hidden" name="access_key" value="f12d555d-cffd-482e-b30b-68863e7207a6" />
 
                             {/* Contact Info */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
