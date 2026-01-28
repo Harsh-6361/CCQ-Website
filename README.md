@@ -2,6 +2,25 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Environment Variables
+
+Before running the project, create a `.env.local` file in the root directory and add the following environment variables:
+
+```bash
+# Web3Forms API Key
+# Get your access key from https://web3forms.com
+WEB3FORMS_ACCESS_KEY=your_access_key_here
+```
+
+You can copy the `.env.example` file as a template:
+```bash
+cp .env.example .env.local
+```
+
+Then update the values with your actual API keys.
+
+### Running the Development Server
+
 First, run the development server:
 
 ```bash

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FaCheckCircle, FaSpinner } from 'react-icons/fa';
+import { submitToWeb3Forms } from '@/app/actions/web3forms';
 
 export default function EnquiryForm({ onSuccess }: { onSuccess?: () => void }) {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,12 +39,9 @@ export default function EnquiryForm({ onSuccess }: { onSuccess?: () => void }) {
         }
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData
-            });
+            const result = await submitToWeb3Forms(formData);
 
-            if (response.ok) {
+            if (result.success) {
                 if (onSuccess) onSuccess();
                 (e.target as HTMLFormElement).reset();
                 setSubject("");
@@ -51,7 +49,7 @@ export default function EnquiryForm({ onSuccess }: { onSuccess?: () => void }) {
                 setDate("");
                 setTime("");
             } else {
-                alert("Something went wrong. Please try again.");
+                alert(result.message || "Something went wrong. Please try again.");
             }
         } catch (error) {
             console.error("Submission error", error);
@@ -63,7 +61,6 @@ export default function EnquiryForm({ onSuccess }: { onSuccess?: () => void }) {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            <input type="hidden" name="access_key" value="f12d555d-cffd-482e-b30b-68863e7207a6" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
