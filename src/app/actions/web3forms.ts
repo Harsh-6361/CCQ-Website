@@ -15,13 +15,22 @@ export async function submitToWeb3Forms(formData: FormData) {
     };
   }
 
-  // Add the access key to the form data
-  formData.append('access_key', accessKey);
+  // Create a new FormData object and copy all fields from the original
+  // This is necessary because FormData from client is read-only
+  const serverFormData = new FormData();
+  
+  // Copy all existing fields
+  for (const [key, value] of formData.entries()) {
+    serverFormData.append(key, value);
+  }
+  
+  // Add the access key securely on the server side
+  serverFormData.append('access_key', accessKey);
 
   try {
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
-      body: formData,
+      body: serverFormData,
     });
 
     const data = await response.json();
